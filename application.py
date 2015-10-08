@@ -2,7 +2,7 @@
 import os
 import sys
 
-print "Bienvenido a factorial"
+print "Welcome to factorial"
 
 def factorial(numero, nombre):
     """Factorial function"""
@@ -12,24 +12,28 @@ def factorial(numero, nombre):
     else:
         numero = 1
     if nombre > 995:
-        print "Es un numero muy alto para el factorial intenta con otro numero menor"
+        print "It is a very high number for factor attempts with a smaller number"
     return numero
 
 def resultado():
     """Her number is entered to calculate the result of the factorial"""
     try:
-        numero = int(raw_input("inserta un numero del 1 al 995:\n"))
+        numero = int(raw_input("Enter a number from 1 to 995:\n"))
         calculo = factorial(1, numero)
-        print "El factorial de %s es %s" % (numero, calculo)
+        print "The factorial of %s is %s" % (numero, calculo)
+        raw_input("Press enter")
         question()
+        
+
     except ValueError:
-        print "\nTiene que ser un valor numerico vuelve a intentarlo:"
+        print "\nIt must be a numeric value try again:"
         resultado()
 
 
 def question():
     """Make the question to see if he wants to re-enter data"""
-    val3 = raw_input("desea calcular el factorial de un numero: y/n\n")
+    limpiar()
+    val3 = raw_input("You want to calculate the factorial of a number: y/n\n")
     val3 = val3.lower()
     if val3 == "y":
         resultado()
